@@ -6,10 +6,16 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
-@Component
+@Component({
+  name: 'HelloWorld'
+})
 export default class HelloWorld extends Vue {
-  mounted() {
-    console.log(this.$buriedpoint)
+  public mounted() {
+    this.$buriedpoint.pastpaperAdClose().then((e: any) => console.log(e)).catch((e: any) => console.error(e))
+    this.$buriedpoint.pastpaperAdClose({start: true})
+    setTimeout(() => {
+      this.$buriedpoint.pastpaperAdClose({endTime: Date.now()})
+    }, 3000)
   }
 }
 </script>
