@@ -1,6 +1,10 @@
 import { VueConstructor } from 'vue'
 
 export const install = (Vue: VueConstructor, options: any) => {
+  console.log(options)
+  options.router.afterEach((newVal, oldVal) => {
+   console.log('watch.$route', newVal, oldVal)
+  })
   Vue.prototype.$buriedpoint = {}
   const obj: any = {}
   Object.keys(options.Mapped).map((name) => {
