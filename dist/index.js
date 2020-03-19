@@ -64,6 +64,7 @@ export var install = function (Vue, options) {
     var toRouteOptions;
     var fromRouteOptions;
     if (options.router) {
+        // 监听路由钩子
         options.router.afterEach(function (to, from) {
             if (Object.keys(toRoute).length) {
                 fromRoute = Object.assign({}, toRoute);
