@@ -3,6 +3,7 @@ import App from './App.vue';
 import { install as buriedpoint } from '../../src/index';
 import BuriedpointDemo from './buriedpoint/buriedpointDemo';
 import VueRouter from 'vue-router'
+import qs from 'qs'
 
 Vue.config.productionTip = false;
 
@@ -27,9 +28,23 @@ export const Mapped = {
   ...BuriedpointDemo
 }
 
+const saveBuriedpoint = (params: any) => {
+  return fetch('http://192.168.10.49:8888/buriedpoint', {
+    method: 'POST',
+    headers: new Headers({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }),
+    body: qs.stringify(params)
+  }).then((response) => response.json())
+}
+
 Vue.use(buriedpoint, {
   Mapped,
-  router
+  router,
+  params: {
+    applicationUid: 'buriedpointTest'
+  },
+  saveBuriedpoint
 });
 
 new Vue({

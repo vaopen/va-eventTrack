@@ -11,11 +11,13 @@ import { Component, Vue } from 'vue-property-decorator';
 })
 export default class Foo extends Vue {
   public mounted() {
-    this.$buriedpoint.pastpaperAdClose().then((e: any) => console.log(e)).catch((e: any) => console.error(e))
-    // this.$buriedpoint.pastpaperAdClose({start: true})
-    // setTimeout(() => {
-    //   this.$buriedpoint.pastpaperAdClose({endTime: Date.now()})
-    // }, 3000)
+    this.$buriedpoint.pastpaperAdClose().then((res: any) => {
+      console.log(res)
+      this.$buriedpoint.pastpaperAdClose({isRecordTime: true}).then((res: any) => console.log(res))
+      setTimeout(() => {
+        this.$buriedpoint.pastpaperAdClose().then((res: any) => console.log(res))
+      }, 3000)
+    })
   }
 }
 </script>
