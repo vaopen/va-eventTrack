@@ -1,6 +1,12 @@
 # eventTrack-vue
 
+[中文](https://github.com/vaopen/va-eventTrack/blob/master/README-ZH.md)
+
 eventTrack for vue plugins
+
+record time for each page to stay
+
+record the time of each event tracking
 
 ## Install
 
