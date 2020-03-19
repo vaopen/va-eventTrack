@@ -1,24 +1,10 @@
 # example
 
-## Project setup
-```
-npm install
-```
+This is eventTrack for vue plugins demo
 
-### Compiles and hot-reloads for development
-```
+## Development
+
+```js
+npm install
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

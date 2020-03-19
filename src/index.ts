@@ -57,6 +57,7 @@ export const install = (Vue: VueConstructor, options: any) => {
   let toRouteOptions: any
   let fromRouteOptions: any
   if (options.router) {
+    // 监听路由钩子
     options.router.afterEach((to: any, from: any) => {
       if (Object.keys(toRoute).length) {
         fromRoute = Object.assign({}, toRoute)

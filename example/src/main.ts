@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import App from './App.vue';
-import { install as eventTrack } from '../../src/index';
+import { install as eventTrack } from 'va-event-track';
 import EventTrackDemo from './eventTrack/eventTrackDemo';
 import VueRouter from 'vue-router'
 import qs from 'qs'
