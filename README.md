@@ -7,7 +7,7 @@ eventTrack for vue plugins
 Run the command below in your terminal to install `va-event-track` first
 
 ```js
-npm install va-event-track -S
+npm install va-event-track --save
 ```
 
 ## Usage
@@ -30,6 +30,7 @@ Vue.ues(eventTrack, {...})
 ## Demo
 
 [example](https://github.com/vaopen/va-eventTrack/tree/master/example)
+
 [server](https://github.com/vaopen/va-eventTrack/tree/master/server)
 
 ## Development
