@@ -1,4 +1,4 @@
-import { Events } from './buriedpointEnum';
+import { Events } from './eventTrackEnum';
 
 const Mapped = {
   pastpaperAdClose: (opts?: any) => {

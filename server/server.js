@@ -11,7 +11,7 @@ process.on('uncaughtException', function(err) {
   console.error('Error caught in uncaughtException event:', err)
 })
 
-router.post('/buriedpoint', async(ctx, next) => {
+router.post('/eventTrack', async(ctx, next) => {
   console.log(ctx.request.body)
   ctx.response.body = ctx.request.body
   // ctx.response.body = {

@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import App from './App.vue';
-import { install as buriedpoint } from '../../src/index';
-import BuriedpointDemo from './buriedpoint/buriedpointDemo';
+import { install as eventTrack } from '../../src/index';
+import EventTrackDemo from './eventTrack/eventTrackDemo';
 import VueRouter from 'vue-router'
 import qs from 'qs'
 
@@ -25,11 +25,11 @@ const router = new VueRouter({
 Vue.use(VueRouter)
 
 export const Mapped = {
-  ...BuriedpointDemo
+  ...EventTrackDemo
 }
 
-const saveBuriedpoint = (params: any) => {
-  return fetch('http://192.168.10.49:8888/buriedpoint', {
+const saveEventTrack = (params: any) => {
+  return fetch('http://192.168.10.49:8888/eventTrack', {
     method: 'POST',
     headers: new Headers({
       'Content-Type': 'application/x-www-form-urlencoded'
@@ -38,13 +38,13 @@ const saveBuriedpoint = (params: any) => {
   }).then((response) => response.json())
 }
 
-Vue.use(buriedpoint, {
+Vue.use(eventTrack, {
   Mapped,
   router,
   params: {
-    applicationUid: 'buriedpointTest'
+    applicationUid: 'eventTrackTest'
   },
-  saveBuriedpoint
+  saveEventTrack
 });
 
 new Vue({

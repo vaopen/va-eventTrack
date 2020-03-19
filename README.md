@@ -1,2 +1,2 @@
-# buriedpoint-vue
-buriedpoint for vue plugins
+# eventTrack-vue
+eventTrack for vue plugins

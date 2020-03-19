@@ -1,22 +1,22 @@
 {
-  "name": "buriedpoint-vue",
+  "name": "eventTrack-vue",
   "version": "1.0.0",
-  "description": "buriedpoint for vue plugins",
+  "description": "eventTrack for vue plugins",
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blacklisten/buriedpoint-vue.git"
+    "url": "git+https://github.com/vaopen/va-eventTrack.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/blacklisten/buriedpoint-vue/issues"
+    "url": "https://github.com/vaopen/va-eventTrack/issues"
   },
-  "homepage": "https://github.com/blacklisten/buriedpoint-vue#readme",
+  "homepage": "https://github.com/vaopen/va-eventTrack#readme",
   "devDependencies": {
     "@types/jest": "^23.3.1",
     "@types/node": "^10.5.5",

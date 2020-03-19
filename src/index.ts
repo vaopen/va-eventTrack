@@ -70,8 +70,8 @@ export const install = (Vue: VueConstructor, options: any) => {
       }, to)
       toRouteOptions = getRouteOptions(toRoute)
       fromRouteOptions = getRouteOptions(fromRoute)
-      if (options.saveBuriedpoint) {
-        options.saveBuriedpoint({
+      if (options.saveEventTrack) {
+        options.saveEventTrack({
           toRouteName: toRouteOptions.routeName,
           toRoutePath: toRouteOptions.routePath,
           fromRouteName: fromRouteOptions.routeName,
@@ -83,10 +83,10 @@ export const install = (Vue: VueConstructor, options: any) => {
       }
     })
   }
-  Vue.prototype.$buriedpoint = {}
+  Vue.prototype.$eventTrack = {}
   const recordOptions: any = {}
   Object.keys(options.Mapped).map((name) => {
-    Vue.prototype.$buriedpoint[name] = (opt: any = {}): Promise<any> => {
+    Vue.prototype.$eventTrack[name] = (opt: any = {}): Promise<any> => {
       if (opt.isRecordTime) {
         recordOptions[name] = {}
         recordOptions[name].startTime = Date.now()
@@ -94,16 +94,16 @@ export const install = (Vue: VueConstructor, options: any) => {
           return resolve('Padding.......')
         })
       } else {
-        if (options.saveBuriedpoint) {
+        if (options.saveEventTrack) {
           const params = {
             startTime: (recordOptions[name] && recordOptions[name].startTime) ? recordOptions[name].startTime || Date.now() : Date.now(),
             endTimer: Date.now(),
             fromRouteName: fromRouteOptions.routeName || '',
-            toRouteName: toRouteOptions.routeName || '   ',
+            toRouteName: toRouteOptions.routeName || '',
             ...options.Mapped[name](),
             ...options.params
           }
-          return options.saveBuriedpoint(params).finally(() => {
+          return options.saveEventTrack(params).finally(() => {
             recordOptions[name] = null
           })
         } else {
