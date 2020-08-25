@@ -98,7 +98,14 @@ export var install = function (Vue, options) {
             }
             else {
                 if (options.saveEventTrack) {
-                    var params = __assign(__assign({ startTime: (recordOptions[name] && recordOptions[name].startTime) ? recordOptions[name].startTime || Date.now() : Date.now(), endTimer: Date.now(), fromRouteName: fromRouteOptions.routeName || '', toRouteName: toRouteOptions.routeName || '' }, options.Mapped[name]()), options.params);
+                    var routersOptions = {};
+                    if (fromRouteOptions) {
+                        routersOptions.fromRouteName = fromRouteOptions.routeName || '';
+                    }
+                    if (toRouteOptions) {
+                        routersOptions.toRouteOptions = toRouteOptions.routeName || '';
+                    }
+                    var params = __assign(__assign(__assign({ startTime: (recordOptions[name] && recordOptions[name].startTime) ? recordOptions[name].startTime || Date.now() : Date.now(), endTimer: Date.now() }, routersOptions), options.Mapped[name]()), options.params);
                     return options.saveEventTrack(params).finally(function () {
                         recordOptions[name] = null;
                     });

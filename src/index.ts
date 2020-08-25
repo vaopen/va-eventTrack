@@ -96,11 +96,17 @@ export const install = (Vue: VueConstructor, options: any) => {
         })
       } else {
         if (options.saveEventTrack) {
+          const routersOptions: any = {}
+          if (fromRouteOptions) {
+            routersOptions.fromRouteName = fromRouteOptions.routeName || ''
+          }
+          if (toRouteOptions) {
+            routersOptions.toRouteOptions = toRouteOptions.routeName || ''
+          }
           const params = {
             startTime: (recordOptions[name] && recordOptions[name].startTime) ? recordOptions[name].startTime || Date.now() : Date.now(),
             endTimer: Date.now(),
-            fromRouteName: fromRouteOptions.routeName || '',
-            toRouteName: toRouteOptions.routeName || '',
+            ...routersOptions,
             ...options.Mapped[name](),
             ...options.params
           }

@@ -1,6 +1,6 @@
 {
   "name": "va-event-track",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "eventTrack for vue plugins",
   "main": "./dist/index.js",
   "types": "./dist/types/index.d.ts",
